@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-circular-references: true # 允许循环依赖
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url:
+      username:
+      password:
+  # redis配置
+  redis:
+    host: 192.168.182.100
+    port: 6379
+    password: 123456
+    database: 0
+    timeout: 2000ms
+bocchi:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: xieVictory
+    admin-ttl: 3600000 # 访问令牌1小时
+    admin-token-name: token
+    # 管理员刷新令牌
+    admin-refresh-secret-key: refreshAdminKey
+    admin-refresh-ttl: 259200000 # 72小时
+    admin-refresh-token-name: refresh_token
+    user-secret-key: xieVictory
+    user-ttl: 3600000 # 访问令牌1小时
+    user-token-name: authentication
+    # 用户刷新令牌
+    user-refresh-secret-key: refreshUserKey
+    user-refresh-ttl: 259200000 # 72小时
+    user-refresh-token-name: refresh_authentication
+  auth:
+    excludePaths:
+      - /user/user/login
+      - /user/user/register
+      - /admin/employee/login
+      - /**/sendCode/**
+      - /user/category/**
+      - /user/dish/**
+      - /user/setMeal/**
+  alioss:
+    endpoint:
+
+    bucketName:
+    cdnDomain:
