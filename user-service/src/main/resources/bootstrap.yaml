@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.182.100:8848
+        ip: ${PUBLIC_IP}
+      config:
+        file-extension: yaml
+        shared-configs:
+          - data-id: bocchi-jdbc.yaml
+          - data-id: bocchi-redis.yaml
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
