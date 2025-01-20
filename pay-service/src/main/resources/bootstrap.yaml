@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: pay-service # 服务名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.182.100:8848 # Nacos服务器地址
+        ip: ${PUBLIC_IP} # 使用环境变量设置公网IP
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml # 文件名扩展
+        shared-configs:
+          - data-id: bocchi-jdbc.yaml
+          - data-id: bocchi-redis.yaml

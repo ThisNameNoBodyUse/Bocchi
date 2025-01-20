@@ -1,0 +1,34 @@
+server:
+  port: 8085 # 微服务端口号
+
+spring:
+  application:
+    name: pay-service # 服务名称
+  main:
+    allow-circular-references: true
+
+
+bocchi:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: xieVictory
+    admin-ttl: 3600000 # 访问令牌1小时
+    admin-token-name: token
+    # 管理员刷新令牌
+    admin-refresh-secret-key: refreshAdminKey
+    admin-refresh-ttl: 259200000 # 72小时
+    admin-refresh-token-name: refresh_token
+    user-secret-key: xieVictory
+    user-ttl: 3600000 # 访问令牌1小时
+    user-token-name: authentication
+    # 用户刷新令牌
+    user-refresh-secret-key: refreshUserKey
+    user-refresh-ttl: 259200000 # 72小时
+    user-refresh-token-name: refresh_authentication
+  db:
+    host: localhost
+    port: 3306
+    database: pay-service
+  redis:
+    host: 192.168.182.100
+    port: 6379
