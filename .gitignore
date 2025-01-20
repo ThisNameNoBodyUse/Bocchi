@@ -1,0 +1,11 @@
+# 忽略密钥配置文件
+**/application-dev.yml
+
+# 忽略编译输出目录和其他配置文件
+/target/
+/.idea
+*.iml
+*.class
+*Test.java
+/test/
+**/application-dev.yaml
