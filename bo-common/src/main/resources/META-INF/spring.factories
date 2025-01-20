@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.bocchi.config.WebMvcConfiguration,\
+  com.bocchi.config.OssConfiguration,\
+  com.bocchi.config.RedisConfiguration,\
+  com.bocchi.config.MybatisPlusConfiguration,\
+  com.bocchi.config.RedissonConfiguration

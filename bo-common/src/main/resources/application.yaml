@@ -1,0 +1,41 @@
+spring:
+  redis:
+    host: 192.168.182.100
+    port: 6379
+    password: 123456
+    database: 0
+
+bocchi:
+  jwt:
+    admin-secret-key: xieVictory
+    admin-ttl: 3600000  # 访问令牌1小时
+    admin-token-name: token
+    admin-refresh-secret-key: refreshAdminKey
+    admin-refresh-ttl: 259200000  # 72小时
+    admin-refresh-token-name: refresh_token
+    user-secret-key: xieVictory
+    user-ttl: 3600000  # 访问令牌1小时
+    user-token-name: authentication
+    user-refresh-secret-key: refreshUserKey
+    user-refresh-ttl: 259200000  # 72小时
+    user-refresh-token-name: refresh_authentication
+
+  alioss:
+    endpoint:
+
+    bucketName:
+    cdnDomain:
+
+  logging:
+    level:
+      org:
+        springframework: DEBUG
+
+redisson:
+  address: redis://192.168.182.100:6379
+  password: 123456
+  database: 0
+  connectionPoolSize: 10 # 连接池大小
+  subscriptionConnectionPoolSize: 5 # 订阅连接池大小
+  timeout: 3000 # 超时时间（ms）
+
